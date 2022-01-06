@@ -1,0 +1,6 @@
+@import '../../App.css';
+
+:local(.homeContainer) {
+  background-color: var(--mountbatten-pink);
+  padding: 25px;
+}

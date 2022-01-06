@@ -1,0 +1,6 @@
+@import '../../App.css';
+
+:local(.authContainer) {
+  background-color: var(--wild-blue-yonder);
+  padding: 25px;
+}
