@@ -1,13 +1,24 @@
-import { Redirect, Route } from "react-router-dom";
+import { Redirect, Route } from 'react-router-dom';
+import { useUser } from '../../context/UserContext.jsx';
 
-
-export default function PrivateRoute({children, ...routeProps }) {
-  let loggedIn = false;
-  const user = loggedIn ? {id: 6, email:'ktschr11@gmail.com' } : null;
+export default function PrivateRoute({ children, ...rest }) {
+  const { user } = useUser();
 
   return (
-  <Route {...routeProps}>
-     (user ? {children} : <Redirect to='/login' />))
-  </Route>
-  )
+    <Route
+      {...rest}
+      render={({ location }) =>
+        user.aud === 'authenticated' ? (
+          children
+        ) : (
+          <Redirect
+            to={{
+              pathname: '/login',
+              state: { from: location },
+            }}
+          />
+        )
+      }
+    />
+  );
 }
