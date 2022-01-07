@@ -18,10 +18,10 @@ export default function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          <Route path="/login">
+          <Route exact path="/login">
             <Auth />
           </Route>
-          <Route path="/register">
+          <Route exact path="/register">
             <Auth isSigningUp />
           </Route>
 
@@ -34,7 +34,7 @@ export default function App() {
           <PrivateRoute path="/confirm-email">
             <ConfirmEmail />
           </PrivateRoute>
-          
+
         </Switch>
       </Router>
     </UserProvider>
