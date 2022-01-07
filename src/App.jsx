@@ -14,22 +14,17 @@ export default function App() {
       <Router>
         <Header />
         <Switch>
-          <Route path="/register">
-            <Auth isSigningUp />
+
+          <Route exact path="/">
+            <Home />
           </Route>
           <Route path="/login">
             <Auth />
           </Route>
-          <Route exact path="/">
-            <Home />
+          <Route path="/register">
+            <Auth isSigningUp />
           </Route>
 
-          {/* <Route path="/profile">
-            <Profile />
-          </Route>
-          <Route path="/confirm-email">
-          <ConfirmEmail />
-        </Route> */}
           <PrivateRoute path="/profile">
             <Profile />
           </PrivateRoute>
@@ -39,6 +34,7 @@ export default function App() {
           <PrivateRoute path="/confirm-email">
             <ConfirmEmail />
           </PrivateRoute>
+          
         </Switch>
       </Router>
     </UserProvider>
