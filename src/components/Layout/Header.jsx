@@ -1,7 +1,6 @@
-import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useUser } from "../../context/ProvideAuth.jsx"
-import { getProfile } from "../../services/profiles.js";
+
 import { signOutUser } from "../../services/users.js";
 
 export default function Header() {

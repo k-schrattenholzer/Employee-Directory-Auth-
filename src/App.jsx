@@ -12,7 +12,7 @@ export default function App() {
   return (
     <UserProvider>
       <Router>
-        <Header/>
+        <Header />
         <Switch>
           <Route path="/register">
             <Auth isSigningUp />
@@ -23,22 +23,22 @@ export default function App() {
           <Route exact path="/">
             <Home />
           </Route>
-          
-          <Route path="/profile">
+
+          {/* <Route path="/profile">
             <Profile />
-          </Route>
-          <Route path="/update-profile">
-            <ProfileForm isEditing />
           </Route>
           <Route path="/confirm-email">
-            <ConfirmEmail />
-          </Route>
-          {/* <PrivateRoute path="/profile">
+          <ConfirmEmail />
+        </Route> */}
+          <PrivateRoute path="/profile">
             <Profile />
+          </PrivateRoute>
+          <PrivateRoute path="/update-profile">
+            <ProfileForm isEditing />
           </PrivateRoute>
           <PrivateRoute path="/confirm-email">
             <ConfirmEmail />
-          </PrivateRoute> */}
+          </PrivateRoute>
         </Switch>
       </Router>
     </UserProvider>
