@@ -11,7 +11,7 @@ export default function Header() {
   const handleSignOut = async () => {
     await signOutUser();
     setUser({});
-    history.push('/login')
+    history.push('/')
   }
 
   return (
