@@ -1,10 +1,14 @@
 import { useState } from 'react';
 import { useUser } from '../../context/ProvideAuth.jsx';
 import { createProfile, updateProfile } from '../../services/profiles.js';
-import { useForm } from '../../hooks/useForm.js'
+import { useForm } from '../../hooks/useForm.js';
+import { useHistory } from 'react-router-dom';
+
+
 
 export default function ProfileForm({ isEditing = false }) {
   const { user } = useUser();
+  const history = useHistory();
 
   const { formState, formError, handleFormChange, setFormError } = useForm({
     name: '',
@@ -13,7 +17,6 @@ export default function ProfileForm({ isEditing = false }) {
     birthday: '',
   });
 
-  console.log(formState);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,7 +25,8 @@ export default function ProfileForm({ isEditing = false }) {
 
     try {
       if(isEditing) {
-        updateProfile({ name, email, bio, birthday })       
+        updateProfile({ name, email, bio, birthday });
+        history.push('/profile')      
       } else {
         await createProfile({ name, email, bio, birthday });
         debugger;
@@ -34,7 +38,7 @@ export default function ProfileForm({ isEditing = false }) {
 
   return (
     <div>
-      {/* {formError && <p>{formError}</p> } */}
+      {formError && <p>{formError}</p> }
       <fieldset>
         <legend>{isEditing ? 'Update Your Profile' : 'Set Up Your Profile'}</legend>
         <form onSubmit={handleSubmit}>
