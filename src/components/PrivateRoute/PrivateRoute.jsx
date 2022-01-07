@@ -1,5 +1,5 @@
 import { Redirect, Route } from 'react-router-dom';
-import { useUser } from '../../context/UserContext.jsx';
+import { useUser } from '../../context/ProvideAuth.jsx';
 
 export default function PrivateRoute({ children, ...rest }) {
   const { user } = useUser();
