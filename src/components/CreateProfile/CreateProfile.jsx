@@ -3,7 +3,7 @@ import { useUser } from "../../context/ProvideAuth.jsx";
 import { createProfile } from "../../services/profiles.js";
 
 export default function CreateProfile() {
-  const user = useUser();
+  const { user } = useUser();
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [birthday, setBirthday] = useState();
@@ -28,11 +28,7 @@ export default function CreateProfile() {
 
             <label 
             htmlFor="email">Email</label>
-            <input 
-              name='email' 
-              value={email} 
-              required 
-              onChange={(e) => setEmail(e.target.value) } />
+            <p>{user.email}</p>
 
             <label 
               htmlFor="birthday">
