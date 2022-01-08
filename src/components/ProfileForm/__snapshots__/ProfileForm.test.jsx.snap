@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should display a profile form 1`] = `
+<div>
+  <div>
+    
+    <fieldset>
+      <legend>
+        Set Up Your Profile
+      </legend>
+      <form>
+        <label
+          for="name"
+        >
+          Name
+        </label>
+        <input
+          name="name"
+          required=""
+          value=""
+        />
+        <label
+          for="email"
+        >
+          Email
+        </label>
+        <p />
+        <label
+          for="birthday"
+        >
+          Birthday
+        </label>
+        <input
+          name="birthday"
+          required=""
+          type="date"
+          value=""
+        />
+        <label
+          for="bio"
+        >
+          Tell us your secrets.
+        </label>
+        <textarea
+          id="bio"
+          name="bio"
+        />
+        <button
+          type="submit"
+        >
+          Done-zo
+        </button>
+      </form>
+    </fieldset>
+  </div>
+</div>
+`;
