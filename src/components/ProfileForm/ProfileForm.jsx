@@ -5,7 +5,6 @@ import { useForm } from '../../hooks/useForm.js';
 import { useHistory } from 'react-router-dom';
 
 
-
 export default function ProfileForm({ isEditing = false }) {
   const { user } = useUser();
   const history = useHistory();
@@ -16,7 +15,6 @@ export default function ProfileForm({ isEditing = false }) {
     bio: '',
     birthday: '',
   });
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();

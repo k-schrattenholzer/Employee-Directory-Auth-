@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import ProfileForm from '../../components/ProfileForm/ProfileForm.jsx';
 import { getProfile } from '../../services/profiles.js';
-import { getSession } from '../../services/users.js'
-import styles from './Profile.css'
+
 
 export default function Profile() {
   const [profile, setProfile] = useState(false);
   const history = useHistory();
+  
 
   useEffect(async () => {
     try {
