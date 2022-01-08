@@ -1,7 +1,7 @@
 import { createContext, useContext, useMemo, useState } from 'react';
 
 
-const ProvideAuth = createContext();
+const UserContext = createContext();
 
 const UserProvider = ({ mockUser, children }) => {
 
@@ -11,11 +11,11 @@ const UserProvider = ({ mockUser, children }) => {
 
   const value = useMemo(() => ({ user, setUser }), [user]);
 
-  return <ProvideAuth.Provider value={value}>{children}</ProvideAuth.Provider>;
+  return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 };
 
 const useUser = () => {
-  const context = useContext(ProvideAuth);
+  const context = useContext(UserContext);
 
   if (context === undefined) {
     throw new Error('useUser must be used within a UserProvider');
