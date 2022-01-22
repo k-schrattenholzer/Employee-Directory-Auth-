@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should display a header with \`Not Signed In\` when signed out 1`] = `
+<div>
+  <div>
+    <header>
+      <p>
+        Not Signed In
+      </p>
+      
+    </header>
+  </div>
+</div>
+`;
+
+exports[`should display a header with users email displayed when signed in 1`] = `
+<div>
+  <div>
+    <header>
+      <p>
+        Signed in as test@example.com
+      </p>
+      <button>
+        Sign Out
+      </button>
+    </header>
+  </div>
+</div>
+`;
